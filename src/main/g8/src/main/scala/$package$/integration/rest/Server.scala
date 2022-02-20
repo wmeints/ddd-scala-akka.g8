@@ -25,7 +25,7 @@ object Server {
     Behaviors.setup[Message] { context =>
       implicit val system: ActorSystem[_] = context.system
 
-      val router = Router()
+      val router = new Router()
 
       val serverBinding: Future[Http.ServerBinding] = Http()
         .newServerAt(settings.interface, settings.port)
