@@ -5,14 +5,14 @@ import akka.actor.typed.scaladsl.Behaviors
 import akka.persistence.typed.PersistenceId
 import akka.persistence.typed.scaladsl.{Effect, EventSourcedBehavior, ReplyEffect}
 
-import $package$.common.CborSerializable
+import $package$.common.{CborSerializable, DomainEvent}
 
 object $aggregate;format="Camel"$ {
     trait Command
     
     trait Reply
     
-    trait Event extends CborSerializable
+    trait Event extends DomainEvent
 
     case object OK extends Command
 
